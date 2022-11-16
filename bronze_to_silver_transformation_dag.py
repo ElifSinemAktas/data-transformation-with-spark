@@ -1,6 +1,6 @@
 from airflow import DAG
 from datetime import datetime, timedelta
-from minio_spark_operations.operation import *
+from bronze_to_silver_data_transformation.operation import *
 from airflow.operators.dummy import DummyOperator
 from airflow.operators.python import PythonOperator, BranchPythonOperator
 
