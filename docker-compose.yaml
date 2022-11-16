@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+# S3 compatible object storage: MinIO
+  minio:
+    container_name: minio
+    image: "minio/minio:RELEASE.2021-10-13T00-23-17Z"
+    volumes:
+      - minio:/data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    networks:
+      - vbo
+    environment:
+      MINIO_ACCESS_KEY: "root"
+      MINIO_SECRET_KEY: "root12345"
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://127.0.0.1:9000/minio/health/live" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+volumes:
+  minio:
+networks:
+  vbo:
