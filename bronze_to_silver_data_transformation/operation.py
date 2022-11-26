@@ -5,7 +5,7 @@ import os
 
 # Start sessions
 spark = get_spark_minio_session("Dataops6-Final", os.environ['MINIO_ACCESS_KEY'],
-                                os.environ['MINIO_SECRET_KEY'], "http://localhost:9000")
+                                os.environ['MINIO_SECRET_KEY'], "http://localhost:9000", os.environ['SPARK_HOME'])
 minio_s3_res = get_s3_cli_res("minio", "http://localhost:9000")["res"]
 minio_s3_cli = get_s3_cli_res("minio", "http://localhost:9000")["cli"]
 
