@@ -11,13 +11,14 @@ def get_s3_cli_res(profile, url):
     return {"cli": s3_cli, "res": s3_res}
 
 
-def get_spark_minio_session(name, access_key, secret_key, url):
-    findspark.init("/opt/manual/spark")
+def get_spark_minio_session(name, access_key, secret_key, url, spark_home):
+    findspark.init("spark_home")
 
     spark = (SparkSession.builder
              .appName(name)
              .master("local[2]")
              .config("spark.jars.packages", "io.delta:delta-core_2.12:1.0.0")
+             #.config("spark.jars.packages", "io.delta:delta-core_2.12:1.0.0, org.apache.hadoop:hadoop-aws:3.2.0, com.amazonaws:aws-java-sdk-bundle:1.11.375")
              .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
              .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
              .config("spark.hadoop.fs.s3a.access.key", access_key)
