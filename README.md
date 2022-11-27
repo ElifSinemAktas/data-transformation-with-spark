@@ -66,7 +66,7 @@ This step simulates data flow to our bronze bucket of object storage.
 
 We'll work on tmdb_5000_credits.csv and tmdb_5000_movies.csv datasets for this study. 
 
-- Import & unzip "tmdb_5000_movies_and_credits.zip" file located [in this repo](https://github.com/ElifSinemAktas/datasets) that has been forked from @erkansirin78. Many thanks to him for sharing these valuable datasets.</br>
+- Import & unzip "tmdb_5000_movies_and_credits.zip" file located [in this repo](https://github.com/ElifSinemAktas/datasets) that has been forked from [erkansirin78](https://github.com/erkansirin78). Many thanks to him for sharing these valuable datasets.</br>
 
 ```bash
 wget -O /<your_file_location_to_save> https://github.com/ElifSinemAktas/datasets/blob/master/tmdb_5000_movies_and_credits.zip?raw=true
@@ -77,7 +77,7 @@ unzip tmdb_5000_movies_and_credits.zip
 ```
 
 - Follow the steps which is explained [in this repo](https://github.com/ElifSinemAktas/data-generator) to use "data-generator". 
-This repo has been forked from erkansirin78. Many thanks to him since this script successfully simulates a streaming data.
+This repo has been forked from [erkansirin78](https://github.com/erkansirin78). Many thanks to him since this script successfully simulates a streaming data.
 
 * In the directory where the data-generator files are saved, run the following codes using terminal to start data-generator and write the data to MinIO bronze bucket.
 
@@ -107,7 +107,7 @@ And here we go! We have objects in our bronze bucket! ❤️
 
 #### 3. Load Data from MinIO bronze bucket, transform and write/merge data to MinIO silver bucket using Spark & Delta Lake
 
-Before we build the main part of the project, we should examine the raw dataframes that is in the bronze-bucket.
+Before we build the main part of the project, we should examine the raw dataframes that are in the bronze-bucket.
 
 - First we need a spark session which can communicate with S3 compatible MinIO. It is a challenging part of the project. 
   <br>Please, take a look at [this article](https://medium.com/@erkansirin/apache-spark-aws-s3-datasource-eb65ee906e64) and using terminal install the jars below and move them to directory where your spark jar files are. Be careful about versions.</br>
