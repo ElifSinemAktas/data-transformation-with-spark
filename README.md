@@ -105,9 +105,9 @@ And here we go! We have objects in our bronze bucket! ❤️
 <img src="images/tmdb-bronze-objects.png" width = 700>
  
 
-#### 3. Load Data from MinIO bronze bucket, transform and write/merge data to MinIO silver bucket using Spark & Delta Lake
+#### 3. Load data from MinIO bronze bucket, transform and write/merge data to MinIO silver bucket using Spark & Delta Lake
 
-Before we build the main part of the project, we should examine the raw dataframes that are in the bronze-bucket.
+Before we build the main part of the project, we should examine the raw dataframes in the bronze-bucket.
 
 - First we need a spark session which can communicate with S3 compatible MinIO. It is a challenging part of the project. 
   <br>Please, take a look at [this article](https://medium.com/@erkansirin/apache-spark-aws-s3-datasource-eb65ee906e64) and using terminal install the jars below and move them to directory where your spark jar files are. Be careful about versions.</br>
