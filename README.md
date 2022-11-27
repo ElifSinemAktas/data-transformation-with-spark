@@ -61,7 +61,7 @@ This step simulates data flow to our bronze bucket of object storage.
 
 
 - Create "tmdb-bronze" and "tmdb-silver" buckets. 
-<br>We will use the silver bucket to store rafined data later.</br>
+<br>We will use the silver bucket to store refined data later.</br>
 <img src="images/buckets.png" width = 700>
 
 We'll work on tmdb_5000_credits.csv and tmdb_5000_movies.csv datasets for this study. 
