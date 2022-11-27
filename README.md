@@ -176,7 +176,7 @@ sudo systemctl start airflow
 sudo systemctl start airflow-scheduler
 ```
 
-- Move "bronze_to_silver_transformation_dag.py" and "bronze_to_silver_data_transformation" folder to where into your airflow "dags" folder.
+- Move "bronze_to_silver_transformation_dag.py" and "bronze_to_silver_data_transformation" files to folder where your airflow "dags" are located.
 
 ```bash
 cp bronze_to_silver_transformation_dag.py <airflow_dags_directory>
@@ -191,7 +191,7 @@ cp bronze_to_silver_data_transformation <airflow_dags_directory>
 Now we can check our silver bucket 🥳 🥳 
 <img src="images/tmdb-silver.png" width = 1000.>
 
-Using the example code below, we can read the data from the silver bucket in delta format and test the results.
+Using the example code below, we can read the data from the silver bucket and test the results.
 
 ```python
 cast_delta = spark.read.format("delta").load("s3a://tmdb-silver/cast")
