@@ -188,8 +188,14 @@ cp bronze_to_silver_data_transformation <airflow_dags_directory>
 - Go to Airflow web UI using [this URL](http://localhost:1502/home). Don't worry, dag file may take time to load. We can see this graph below after loading.<img src="images/airflow_dag.png" width = 1000.>
   
 
-Now we can check our silver bucket 🥳 🥳 And we can see the results using [read_delta.ipynb]().
+Now we can check our silver bucket 🥳 🥳 
 <img src="images/tmdb-silver.png" width = 1000.>
+
+Using the example code below, we can read the data from the silver bucket in delta format and test the results.
+
+```python
+cast_delta = spark.read.format("delta").load("s3a://tmdb-silver/cast")
+```
 
 ### Sources & Further Reading
 
