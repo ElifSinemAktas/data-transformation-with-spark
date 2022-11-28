@@ -43,7 +43,7 @@ Note: It is assumed that you have Apache Spark, Apache Airflow and Docker and AW
 
 #### 1. Up the Docker container to run MinIO service
 
-- Start docker and use the **"docker-compose.yml"** file that is prepared for minIO service. In the directory where the .yaml file is saved, run the following code using the terminal.
+- Start docker and use the **"docker-compose.yml"** file that is prepared for minIO service. Run the following codes using the terminal.
 
 ```bash 
 sudo systemctl start docker
