@@ -119,7 +119,7 @@ mv aws-java-sdk-bundle-1.11.375.jar hadoop-aws-3.2.0.jar /<your_spark_jar_files_
 ```
 
 - The spark session can be run as seen below for now and we can read a object/dataframe from MinIO to inspect raw data.
- <br>You can find the all codes of prestudy and the explanations in the [prestudy_of_dataframes.ipynb(https://github.com/ElifSinemAktas/data_transformation_with_spark/blob/main/prestudy_of_dataframes.ipynb) script.</br>
+ <br>You can find the all codes of prestudy and the explanations in the [prestudy_of_dataframes.ipynb](https://github.com/ElifSinemAktas/data_transformation_with_spark/blob/main/prestudy_of_dataframes.ipynb) script.</br>
  Notes: 
   - Be careful about the key/path of object. Day and time will vary depending on when you run the generator.
   - Key functions are "from_json" and "explode_outer" for this part to reshape dataframes.
