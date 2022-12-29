@@ -12,7 +12,7 @@ def get_s3_cli_res(profile, url):
 
 
 def get_spark_minio_session(name, access_key, secret_key, url, spark_home):
-    findspark.init("spark_home")
+    findspark.init(spark_home)
 
     spark = (SparkSession.builder
              .appName(name)
